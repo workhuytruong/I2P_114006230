@@ -1,0 +1,1593 @@
+{
+  "map": [
+    {
+      "path": "map.tmx",
+      "teleport": [
+        {
+          "x": 47,
+          "y": 28,
+          "destination": "shop.tmx"
+        },
+        {
+          "x": 24,
+          "y": 23,
+          "destination": "grassarena.tmx"
+        },
+        {
+          "x": 54,
+          "y": 14,
+          "destination": "desert.tmx"
+        },
+        {
+          "x": 52,
+          "y": 28,
+          "destination": "pokemoncenter.tmx"
+        },
+        {
+          "x": 53,
+          "y": 28,
+          "destination": "pokemoncenter.tmx"
+        }
+      ],
+      "player": {
+        "x": 16.0,
+        "y": 30.0
+      },
+      "enemy_trainers": [
+        {
+          "x": 24.0,
+          "y": 29.0,
+          "classification": "stationary",
+          "facing": "DOWN",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow2.png",
+          "monsters": [
+            {
+              "name": "Charmander",
+              "hp": 40,
+              "max_hp": 60,
+              "level": 12,
+              "attack": 18,
+              "defense": 12,
+              "sprite_path": "menu_sprites/menusprite7.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Vulpix",
+              "hp": 50,
+              "max_hp": 50,
+              "level": 10,
+              "attack": 16,
+              "defense": 10,
+              "sprite_path": "menu_sprites/menusprite8.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 54.0,
+          "y": 16.0,
+          "classification": "stationary",
+          "facing": "UP",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow3.png",
+          "monsters": [
+            {
+              "name": "Growlithe",
+              "hp": 25,
+              "max_hp": 25,
+              "level": 5,
+              "attack": 12,
+              "defense": 7,
+              "sprite_path": "menu_sprites/menusprite9.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Magmar",
+              "hp": 30,
+              "max_hp": 30,
+              "level": 6,
+              "attack": 13,
+              "defense": 7,
+              "sprite_path": "menu_sprites/menusprite10.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                },
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 31.0,
+          "y": 31.0,
+          "classification": "stationary",
+          "facing": "UP",
+          "max_tiles": 2,
+          "monsters": [
+            {
+              "name": "Bulbasaur",
+              "hp": 45,
+              "max_hp": 45,
+              "level": 8,
+              "attack": 15,
+              "defense": 9,
+              "sprite_path": "menu_sprites/menusprite11.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Spore Cloud",
+                  "power": 12,
+                  "cost": 1
+                },
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Bloom Strike",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Vaporeon",
+              "hp": 39,
+              "max_hp": 39,
+              "level": 7,
+              "attack": 14,
+              "defense": 8,
+              "sprite_path": "menu_sprites/menusprite12.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Bubble Jet",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Mist Shield",
+                  "power": 14,
+                  "cost": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "npcs": []
+    },
+    {
+      "path": "shop.tmx",
+      "teleport": [
+        {
+          "x": 11,
+          "y": 14,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 12,
+          "y": 14,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 13,
+          "y": 14,
+          "destination": "map.tmx"
+        }
+      ],
+      "player": {
+        "x": 12.0,
+        "y": 12.0
+      },
+      "enemy_trainers": [],
+      "npcs": [
+        {
+          "x": 12.0,
+          "y": 6.0,
+          "classification": "shop",
+          "facing": "DOWN",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow4.png",
+          "shop_items": [
+            {
+              "name": "Potion",
+              "buy_price": 20,
+              "sell_price": 15,
+              "count": 10,
+              "sprite_path": "ingame_ui/potion.png"
+            },
+            {
+              "name": "Pokeball",
+              "buy_price": 15,
+              "sell_price": 5,
+              "count": 10,
+              "sprite_path": "ingame_ui/ball.png"
+            },
+            {
+              "name": "Strength Potion",
+              "buy_price": 25,
+              "sell_price": 15,
+              "count": 5,
+              "sprite_path": "ingame_ui/potion.png"
+            },
+            {
+              "name": "Defense Potion",
+              "buy_price": 30,
+              "sell_price": 15,
+              "count": 5,
+              "sprite_path": "ingame_ui/potion.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "grassarena.tmx",
+      "teleport": [
+        {
+          "x": 13,
+          "y": 19,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 14,
+          "y": 19,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 15,
+          "y": 19,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 16,
+          "y": 19,
+          "destination": "map.tmx"
+        }
+      ],
+      "player": {
+        "x": 14.0,
+        "y": 18.0
+      },
+      "enemy_trainers": [
+        {
+          "x": 6.0,
+          "y": 7.0,
+          "classification": "stationary",
+          "facing": "DOWN",
+          "max_tiles": 8,
+          "sprite_sheet": "character/ow5.png",
+          "monsters": [
+            {
+              "name": "Grovyle",
+              "hp": 80,
+              "max_hp": 80,
+              "level": 23,
+              "attack": 25,
+              "defense": 30,
+              "sprite_path": "menu_sprites/menusprite2.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Bloom Strike",
+                  "power": 30,
+                  "cost": 6
+                },
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Vine Whip",
+                  "power": 25,
+                  "cost": 4
+                }
+              ]
+            },
+            {
+              "name": "Chikorita",
+              "hp": 110,
+              "max_hp": 110,
+              "level": 30,
+              "attack": 35,
+              "defense": 30,
+              "sprite_path": "menu_sprites/menusprite15.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Seed Gun",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Spore Cloud",
+                  "power": 12,
+                  "cost": 1
+                },
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Lilligant",
+              "hp": 200,
+              "max_hp": 200,
+              "level": 50,
+              "attack": 50,
+              "defense": 45,
+              "sprite_path": "menu_sprites/menusprite16.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Spore Cloud",
+                  "power": 12,
+                  "cost": 1
+                },
+                {
+                  "name": "Vine Whip",
+                  "power": 25,
+                  "cost": 4
+                },
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "npcs": []
+    },
+    {
+      "path": "desert.tmx",
+      "teleport": [
+        {
+          "x": 18,
+          "y": 18,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 19,
+          "y": 18,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 20,
+          "y": 18,
+          "destination": "map.tmx"
+        }
+      ],
+      "player": {
+        "x": 19.0,
+        "y": 21.0
+      },
+      "enemy_trainers": [
+        {
+          "x": 8.0,
+          "y": 10.0,
+          "classification": "stationary",
+          "facing": "DOWN",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow7.png",
+          "monsters": [
+            {
+              "name": "Charmander",
+              "hp": 70,
+              "max_hp": 70,
+              "level": 15,
+              "attack": 20,
+              "defense": 12,
+              "sprite_path": "menu_sprites/menusprite7.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Vulpix",
+              "hp": 65,
+              "max_hp": 65,
+              "level": 14,
+              "attack": 18,
+              "defense": 11,
+              "sprite_path": "menu_sprites/menusprite8.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Squirtle",
+              "hp": 72,
+              "max_hp": 72,
+              "level": 15,
+              "attack": 17,
+              "defense": 14,
+              "sprite_path": "menu_sprites/menusprite6.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Bubble Jet",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Budew",
+              "hp": 60,
+              "max_hp": 60,
+              "level": 13,
+              "attack": 16,
+              "defense": 10,
+              "sprite_path": "menu_sprites/menusprite1.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Seed Gun",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Vine Whip",
+                  "power": 25,
+                  "cost": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 12.0,
+          "y": 8.0,
+          "classification": "stationary",
+          "facing": "LEFT",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow9.png",
+          "monsters": [
+            {
+              "name": "Growlithe",
+              "hp": 78,
+              "max_hp": 78,
+              "level": 18,
+              "attack": 24,
+              "defense": 13,
+              "sprite_path": "menu_sprites/menusprite9.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                }
+              ]
+            },
+            {
+              "name": "Magmar",
+              "hp": 82,
+              "max_hp": 82,
+              "level": 19,
+              "attack": 26,
+              "defense": 14,
+              "sprite_path": "menu_sprites/menusprite10.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Heat Wave",
+                  "power": 32,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Vaporeon",
+              "hp": 90,
+              "max_hp": 90,
+              "level": 20,
+              "attack": 22,
+              "defense": 18,
+              "sprite_path": "menu_sprites/menusprite12.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Tidal Crush",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Leafeon",
+              "hp": 84,
+              "max_hp": 84,
+              "level": 18,
+              "attack": 23,
+              "defense": 16,
+              "sprite_path": "menu_sprites/menusprite3.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Bloom Strike",
+                  "power": 30,
+                  "cost": 6
+                },
+                {
+                  "name": "Vine Whip",
+                  "power": 25,
+                  "cost": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 24.0,
+          "y": 12.0,
+          "classification": "stationary",
+          "facing": "DOWN",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow10.png",
+          "monsters": [
+            {
+              "name": "Charmander",
+              "hp": 76,
+              "max_hp": 76,
+              "level": 17,
+              "attack": 23,
+              "defense": 12,
+              "sprite_path": "menu_sprites/menusprite7.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Vulpix",
+              "hp": 70,
+              "max_hp": 70,
+              "level": 16,
+              "attack": 20,
+              "defense": 11,
+              "sprite_path": "menu_sprites/menusprite8.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Heat Wave",
+                  "power": 32,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Seadra",
+              "hp": 88,
+              "max_hp": 88,
+              "level": 19,
+              "attack": 25,
+              "defense": 16,
+              "sprite_path": "menu_sprites/menusprite13.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Tidal Crush",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Chikorita",
+              "hp": 74,
+              "max_hp": 74,
+              "level": 16,
+              "attack": 19,
+              "defense": 14,
+              "sprite_path": "menu_sprites/menusprite15.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Seed Gun",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Bloom Strike",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 28.0,
+          "y": 18.0,
+          "classification": "stationary",
+          "facing": "LEFT",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow7.png",
+          "monsters": [
+            {
+              "name": "Magmar",
+              "hp": 90,
+              "max_hp": 90,
+              "level": 22,
+              "attack": 28,
+              "defense": 16,
+              "sprite_path": "menu_sprites/menusprite10.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                },
+                {
+                  "name": "Heat Wave",
+                  "power": 32,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Growlithe",
+              "hp": 80,
+              "max_hp": 80,
+              "level": 20,
+              "attack": 24,
+              "defense": 13,
+              "sprite_path": "menu_sprites/menusprite9.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                }
+              ]
+            },
+            {
+              "name": "Lapras",
+              "hp": 110,
+              "max_hp": 110,
+              "level": 24,
+              "attack": 26,
+              "defense": 20,
+              "sprite_path": "menu_sprites/menusprite14.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Tidal Crush",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Leafeon",
+              "hp": 88,
+              "max_hp": 88,
+              "level": 20,
+              "attack": 24,
+              "defense": 18,
+              "sprite_path": "menu_sprites/menusprite3.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Vine Whip",
+                  "power": 25,
+                  "cost": 4
+                },
+                {
+                  "name": "Bloom Strike",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 16.0,
+          "y": 24.0,
+          "classification": "stationary",
+          "facing": "UP",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow9.png",
+          "monsters": [
+            {
+              "name": "Charmander",
+              "hp": 82,
+              "max_hp": 82,
+              "level": 20,
+              "attack": 25,
+              "defense": 13,
+              "sprite_path": "menu_sprites/menusprite7.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                }
+              ]
+            },
+            {
+              "name": "Growlithe",
+              "hp": 78,
+              "max_hp": 78,
+              "level": 19,
+              "attack": 23,
+              "defense": 13,
+              "sprite_path": "menu_sprites/menusprite9.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                }
+              ]
+            },
+            {
+              "name": "Vaporeon",
+              "hp": 96,
+              "max_hp": 96,
+              "level": 21,
+              "attack": 23,
+              "defense": 19,
+              "sprite_path": "menu_sprites/menusprite12.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Bubble Jet",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Tidal Crush",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Meowth",
+              "hp": 70,
+              "max_hp": 70,
+              "level": 18,
+              "attack": 19,
+              "defense": 12,
+              "sprite_path": "menu_sprites/menusprite5.png",
+              "element": "neutral",
+              "skills": [
+                {
+                  "name": "Quick Hit",
+                  "power": 12,
+                  "cost": 0
+                },
+                {
+                  "name": "Power Punch",
+                  "power": 20,
+                  "cost": 2
+                },
+                {
+                  "name": "Guard Break",
+                  "power": 16,
+                  "cost": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 30.0,
+          "y": 26.0,
+          "classification": "stationary",
+          "facing": "UP",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow10.png",
+          "monsters": [
+            {
+              "name": "Vulpix",
+              "hp": 76,
+              "max_hp": 76,
+              "level": 19,
+              "attack": 22,
+              "defense": 12,
+              "sprite_path": "menu_sprites/menusprite8.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                }
+              ]
+            },
+            {
+              "name": "Magmar",
+              "hp": 92,
+              "max_hp": 92,
+              "level": 22,
+              "attack": 28,
+              "defense": 16,
+              "sprite_path": "menu_sprites/menusprite10.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                },
+                {
+                  "name": "Heat Wave",
+                  "power": 32,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Squirtle",
+              "hp": 80,
+              "max_hp": 80,
+              "level": 20,
+              "attack": 20,
+              "defense": 15,
+              "sprite_path": "menu_sprites/menusprite6.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Bubble Jet",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                }
+              ]
+            },
+            {
+              "name": "Seadra",
+              "hp": 94,
+              "max_hp": 94,
+              "level": 22,
+              "attack": 27,
+              "defense": 17,
+              "sprite_path": "menu_sprites/menusprite13.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Tidal Crush",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "x": 34.0,
+          "y": 20.0,
+          "classification": "stationary",
+          "facing": "RIGHT",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow7.png",
+          "monsters": [
+            {
+              "name": "Charmander",
+              "hp": 84,
+              "max_hp": 84,
+              "level": 21,
+              "attack": 25,
+              "defense": 14,
+              "sprite_path": "menu_sprites/menusprite7.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                },
+                {
+                  "name": "Blaze Kick",
+                  "power": 28,
+                  "cost": 5
+                }
+              ]
+            },
+            {
+              "name": "Vulpix",
+              "hp": 74,
+              "max_hp": 74,
+              "level": 19,
+              "attack": 22,
+              "defense": 12,
+              "sprite_path": "menu_sprites/menusprite8.png",
+              "element": "fire",
+              "skills": [
+                {
+                  "name": "Ember",
+                  "power": 18,
+                  "cost": 2
+                },
+                {
+                  "name": "Fire Spin",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Flame Burst",
+                  "power": 26,
+                  "cost": 4
+                }
+              ]
+            },
+            {
+              "name": "Lapras",
+              "hp": 112,
+              "max_hp": 112,
+              "level": 25,
+              "attack": 27,
+              "defense": 21,
+              "sprite_path": "menu_sprites/menusprite14.png",
+              "element": "water",
+              "skills": [
+                {
+                  "name": "Water Pulse",
+                  "power": 24,
+                  "cost": 4
+                },
+                {
+                  "name": "Aqua Slash",
+                  "power": 22,
+                  "cost": 3
+                },
+                {
+                  "name": "Tidal Crush",
+                  "power": 30,
+                  "cost": 6
+                }
+              ]
+            },
+            {
+              "name": "Leafeon",
+              "hp": 90,
+              "max_hp": 90,
+              "level": 21,
+              "attack": 25,
+              "defense": 18,
+              "sprite_path": "menu_sprites/menusprite3.png",
+              "element": "grass",
+              "skills": [
+                {
+                  "name": "Leaf Wind",
+                  "power": 20,
+                  "cost": 3
+                },
+                {
+                  "name": "Bloom Strike",
+                  "power": 30,
+                  "cost": 6
+                },
+                {
+                  "name": "Vine Whip",
+                  "power": 25,
+                  "cost": 4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pokemoncenter.tmx",
+      "teleport": [
+        {
+          "x": 13,
+          "y": 19,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 14,
+          "y": 19,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 15,
+          "y": 18,
+          "destination": "map.tmx"
+        },
+        {
+          "x": 16,
+          "y": 19,
+          "destination": "map.tmx"
+        }
+      ],
+      "player": {
+        "x": 14.0,
+        "y": 18.0
+      },
+      "enemy_trainers": [],
+      "npcs": [
+        {
+          "x": 14.0,
+          "y": 4.0,
+          "classification": "healer",
+          "facing": "DOWN",
+          "max_tiles": 2,
+          "sprite_sheet": "character/ow5.png"
+        }
+      ]
+    }
+  ],
+  "current_map": "map.tmx",
+  "player": {
+    "x": 16,
+    "y": 30,
+    "monsters": [
+      {
+        "name": "Budew",
+        "hp": 100,
+        "max_hp": 100,
+        "level": 25,
+        "attack": 30,
+        "defense": 18,
+        "sprite_path": "menu_sprites/menusprite1.png",
+        "element": "grass",
+        "skills": [
+          {
+            "name": "Seed Gun",
+            "power": 18,
+            "cost": 2
+          },
+          {
+            "name": "Spore Cloud",
+            "power": 12,
+            "cost": 1
+          },
+          {
+            "name": "Bloom Strike",
+            "power": 30,
+            "cost": 6
+          }
+        ]
+      },
+      {
+        "name": "Grovyle",
+        "hp": 200,
+        "max_hp": 200,
+        "level": 36,
+        "attack": 40,
+        "defense": 24,
+        "sprite_path": "menu_sprites/menusprite2.png",
+        "element": "grass",
+        "skills": [
+          {
+            "name": "Vine Whip",
+            "power": 25,
+            "cost": 4
+          },
+          {
+            "name": "Seed Gun",
+            "power": 18,
+            "cost": 2
+          },
+          {
+            "name": "Leaf Wind",
+            "power": 20,
+            "cost": 3
+          }
+        ]
+      },
+      {
+        "name": "Leafeon",
+        "hp": 180,
+        "max_hp": 180,
+        "level": 32,
+        "attack": 36,
+        "defense": 28,
+        "sprite_path": "menu_sprites/menusprite3.png",
+        "element": "grass",
+        "skills": [
+          {
+            "name": "Vine Whip",
+            "power": 25,
+            "cost": 4
+          },
+          {
+            "name": "Leaf Wind",
+            "power": 20,
+            "cost": 3
+          },
+          {
+            "name": "Spore Cloud",
+            "power": 12,
+            "cost": 1
+          }
+        ]
+      }
+    ]
+  },
+  "bag": {
+    "monsters": [
+      {
+        "name": "Budew",
+        "hp": 100,
+        "max_hp": 100,
+        "level": 25,
+        "attack": 30,
+        "defense": 18,
+        "sprite_path": "menu_sprites/menusprite1.png",
+        "element": "grass",
+        "skills": [
+          {
+            "name": "Spore Cloud",
+            "power": 12,
+            "cost": 1
+          },
+          {
+            "name": "Leaf Wind",
+            "power": 20,
+            "cost": 3
+          },
+          {
+            "name": "Seed Gun",
+            "power": 18,
+            "cost": 2
+          }
+        ]
+      },
+      {
+        "name": "Grovyle",
+        "hp": 200,
+        "max_hp": 200,
+        "level": 36,
+        "attack": 40,
+        "defense": 24,
+        "sprite_path": "menu_sprites/menusprite2.png",
+        "element": "grass",
+        "skills": [
+          {
+            "name": "Vine Whip",
+            "power": 25,
+            "cost": 4
+          },
+          {
+            "name": "Bloom Strike",
+            "power": 30,
+            "cost": 6
+          },
+          {
+            "name": "Leaf Wind",
+            "power": 20,
+            "cost": 3
+          }
+        ]
+      },
+      {
+        "name": "Leafeon",
+        "hp": 180,
+        "max_hp": 180,
+        "level": 32,
+        "attack": 36,
+        "defense": 28,
+        "sprite_path": "menu_sprites/menusprite3.png",
+        "element": "grass",
+        "skills": [
+          {
+            "name": "Spore Cloud",
+            "power": 12,
+            "cost": 1
+          },
+          {
+            "name": "Leaf Wind",
+            "power": 20,
+            "cost": 3
+          },
+          {
+            "name": "Seed Gun",
+            "power": 18,
+            "cost": 2
+          }
+        ]
+      },
+      {
+        "name": "Eevee",
+        "hp": 160,
+        "max_hp": 160,
+        "level": 30,
+        "attack": 34,
+        "defense": 22,
+        "sprite_path": "menu_sprites/menusprite4.png",
+        "element": "neutral",
+        "skills": [
+          {
+            "name": "Quick Hit",
+            "power": 12,
+            "cost": 0
+          },
+          {
+            "name": "Guard Break",
+            "power": 16,
+            "cost": 1
+          },
+          {
+            "name": "Swift Kick",
+            "power": 18,
+            "cost": 2
+          }
+        ]
+      },
+      {
+        "name": "Meowth",
+        "hp": 140,
+        "max_hp": 140,
+        "level": 28,
+        "attack": 32,
+        "defense": 20,
+        "sprite_path": "menu_sprites/menusprite5.png",
+        "element": "neutral",
+        "skills": [
+          {
+            "name": "Focus Jab",
+            "power": 24,
+            "cost": 4
+          },
+          {
+            "name": "Guard Break",
+            "power": 16,
+            "cost": 1
+          },
+          {
+            "name": "Swift Kick",
+            "power": 18,
+            "cost": 2
+          }
+        ]
+      },
+      {
+        "name": "Squirtle",
+        "hp": 220,
+        "max_hp": 220,
+        "level": 40,
+        "attack": 44,
+        "defense": 30,
+        "sprite_path": "menu_sprites/menusprite6.png",
+        "element": "water",
+        "skills": [
+          {
+            "name": "Water Pulse",
+            "power": 24,
+            "cost": 4
+          },
+          {
+            "name": "Bubble Jet",
+            "power": 18,
+            "cost": 2
+          },
+          {
+            "name": "Tidal Crush",
+            "power": 30,
+            "cost": 6
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "name": "Potion",
+        "count": 5,
+        "sprite_path": "ingame_ui/potion.png"
+      },
+      {
+        "name": "Coins",
+        "count": 3,
+        "sprite_path": "ingame_ui/coin.png"
+      },
+      {
+        "name": "Pokeball",
+        "count": 10,
+        "sprite_path": "ingame_ui/ball.png"
+      },
+      {
+        "name": "Strength Potion",
+        "count": 2,
+        "sprite_path": "ingame_ui/potion.png"
+      },
+      {
+        "name": "Defense Potion",
+        "count": 2,
+        "sprite_path": "ingame_ui/potion.png"
+      }
+    ]
+  }
+}

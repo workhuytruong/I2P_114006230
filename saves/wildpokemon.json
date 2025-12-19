@@ -1,0 +1,344 @@
+{
+  "map.tmx": [
+    {
+      "name": "Budew",
+      "hp": 40,
+      "max_hp": 40,
+      "level": 4,
+      "sprite_path": "menu_sprites/menusprite1.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Seed Gun", "power": 12, "cost": 1 },
+        { "name": "Leaf Wind", "power": 15, "cost": 2 },
+        { "name": "Vine Whip", "power": 18, "cost": 3 }
+      ]
+    },
+    {
+      "name": "Grovyle",
+      "hp": 52,
+      "max_hp": 52,
+      "level": 8,
+      "sprite_path": "menu_sprites/menusprite2.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Leaf Wind", "power": 18, "cost": 3 },
+        { "name": "Spore Cloud", "power": 12, "cost": 1 },
+        { "name": "Bloom Strike", "power": 24, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Leafeon",
+      "hp": 60,
+      "max_hp": 60,
+      "level": 10,
+      "sprite_path": "menu_sprites/menusprite3.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Vine Whip", "power": 22, "cost": 4 },
+        { "name": "Bloom Strike", "power": 28, "cost": 6 },
+        { "name": "Seed Gun", "power": 16, "cost": 2 }
+      ]
+    },
+    {
+      "name": "Eevee",
+      "hp": 50,
+      "max_hp": 50,
+      "level": 6,
+      "sprite_path": "menu_sprites/menusprite4.png",
+      "element": "neutral",
+      "skills": [
+        { "name": "Quick Hit", "power": 10, "cost": 0 },
+        { "name": "Power Punch", "power": 15, "cost": 2 },
+        { "name": "Guard Break", "power": 12, "cost": 1 }
+      ]
+    },
+    {
+      "name": "Meowth",
+      "hp": 62,
+      "max_hp": 62,
+      "level": 11,
+      "sprite_path": "menu_sprites/menusprite5.png",
+      "element": "neutral",
+      "skills": [
+        { "name": "Swift Kick", "power": 16, "cost": 2 },
+        { "name": "Guard Break", "power": 14, "cost": 1 },
+        { "name": "Focus Jab", "power": 20, "cost": 3 }
+      ]
+    },
+    {
+      "name": "Squirtle",
+      "hp": 58,
+      "max_hp": 58,
+      "level": 9,
+      "sprite_path": "menu_sprites/menusprite6.png",
+      "element": "water",
+      "skills": [
+        { "name": "Bubble Jet", "power": 14, "cost": 2 },
+        { "name": "Aqua Slash", "power": 18, "cost": 3 },
+        { "name": "Water Pulse", "power": 20, "cost": 4 }
+      ]
+    },
+    {
+      "name": "Charmander",
+      "hp": 60,
+      "max_hp": 60,
+      "level": 10,
+      "sprite_path": "menu_sprites/menusprite7.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Ember", "power": 14, "cost": 2 },
+        { "name": "Fire Spin", "power": 18, "cost": 3 },
+        { "name": "Flame Burst", "power": 20, "cost": 4 }
+      ]
+    },
+    {
+      "name": "Vulpix",
+      "hp": 66,
+      "max_hp": 66,
+      "level": 12,
+      "sprite_path": "menu_sprites/menusprite8.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Ember", "power": 16, "cost": 2 },
+        { "name": "Fire Spin", "power": 20, "cost": 3 },
+        { "name": "Blaze Kick", "power": 24, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Growlithe",
+      "hp": 72,
+      "max_hp": 72,
+      "level": 14,
+      "sprite_path": "menu_sprites/menusprite9.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Ember", "power": 18, "cost": 2 },
+        { "name": "Flame Burst", "power": 22, "cost": 4 },
+        { "name": "Heat Wave", "power": 26, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Magmar",
+      "hp": 78,
+      "max_hp": 78,
+      "level": 16,
+      "sprite_path": "menu_sprites/menusprite10.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Flame Burst", "power": 24, "cost": 4 },
+        { "name": "Fire Spin", "power": 20, "cost": 3 },
+        { "name": "Blaze Kick", "power": 26, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Vaporeon",
+      "hp": 84,
+      "max_hp": 84,
+      "level": 18,
+      "sprite_path": "menu_sprites/menusprite12.png",
+      "element": "water",
+      "skills": [
+        { "name": "Bubble Jet", "power": 16, "cost": 2 },
+        { "name": "Water Pulse", "power": 22, "cost": 4 },
+        { "name": "Tidal Crush", "power": 26, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Seadra",
+      "hp": 90,
+      "max_hp": 90,
+      "level": 20,
+      "sprite_path": "menu_sprites/menusprite13.png",
+      "element": "water",
+      "skills": [
+        { "name": "Aqua Slash", "power": 22, "cost": 3 },
+        { "name": "Water Pulse", "power": 24, "cost": 4 },
+        { "name": "Tidal Crush", "power": 28, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Lapras",
+      "hp": 110,
+      "max_hp": 110,
+      "level": 24,
+      "sprite_path": "menu_sprites/menusprite14.png",
+      "element": "water",
+      "skills": [
+        { "name": "Bubble Jet", "power": 18, "cost": 2 },
+        { "name": "Aqua Slash", "power": 24, "cost": 4 },
+        { "name": "Tidal Crush", "power": 32, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Chikorita",
+      "hp": 68,
+      "max_hp": 68,
+      "level": 13,
+      "sprite_path": "menu_sprites/menusprite15.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Leaf Wind", "power": 16, "cost": 3 },
+        { "name": "Seed Gun", "power": 14, "cost": 2 },
+        { "name": "Bloom Strike", "power": 24, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Lilligant",
+      "hp": 96,
+      "max_hp": 96,
+      "level": 22,
+      "sprite_path": "menu_sprites/menusprite16.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Leaf Wind", "power": 20, "cost": 3 },
+        { "name": "Vine Whip", "power": 22, "cost": 4 },
+        { "name": "Bloom Strike", "power": 28, "cost": 6 }
+      ]
+    }
+  ],
+  "desert.tmx": [
+    {
+      "name": "Charmander",
+      "hp": 82,
+      "max_hp": 82,
+      "level": 20,
+      "sprite_path": "menu_sprites/menusprite7.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Ember", "power": 18, "cost": 2 },
+        { "name": "Flame Burst", "power": 26, "cost": 4 },
+        { "name": "Blaze Kick", "power": 28, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Magmar",
+      "hp": 94,
+      "max_hp": 94,
+      "level": 23,
+      "sprite_path": "menu_sprites/menusprite10.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Flame Burst", "power": 26, "cost": 4 },
+        { "name": "Fire Spin", "power": 22, "cost": 3 },
+        { "name": "Heat Wave", "power": 32, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Vulpix",
+      "hp": 78,
+      "max_hp": 78,
+      "level": 21,
+      "sprite_path": "menu_sprites/menusprite8.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Ember", "power": 16, "cost": 2 },
+        { "name": "Fire Spin", "power": 22, "cost": 3 },
+        { "name": "Flame Burst", "power": 24, "cost": 4 }
+      ]
+    },
+    {
+      "name": "Growlithe",
+      "hp": 88,
+      "max_hp": 88,
+      "level": 22,
+      "sprite_path": "menu_sprites/menusprite9.png",
+      "element": "fire",
+      "skills": [
+        { "name": "Ember", "power": 18, "cost": 2 },
+        { "name": "Flame Burst", "power": 24, "cost": 4 },
+        { "name": "Blaze Kick", "power": 26, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Vaporeon",
+      "hp": 102,
+      "max_hp": 102,
+      "level": 24,
+      "sprite_path": "menu_sprites/menusprite12.png",
+      "element": "water",
+      "skills": [
+        { "name": "Bubble Jet", "power": 18, "cost": 2 },
+        { "name": "Water Pulse", "power": 24, "cost": 4 },
+        { "name": "Tidal Crush", "power": 30, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Seadra",
+      "hp": 100,
+      "max_hp": 100,
+      "level": 23,
+      "sprite_path": "menu_sprites/menusprite13.png",
+      "element": "water",
+      "skills": [
+        { "name": "Aqua Slash", "power": 22, "cost": 3 },
+        { "name": "Water Pulse", "power": 24, "cost": 4 },
+        { "name": "Tidal Crush", "power": 30, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Lapras",
+      "hp": 128,
+      "max_hp": 128,
+      "level": 26,
+      "sprite_path": "menu_sprites/menusprite14.png",
+      "element": "water",
+      "skills": [
+        { "name": "Water Pulse", "power": 26, "cost": 4 },
+        { "name": "Aqua Slash", "power": 24, "cost": 4 },
+        { "name": "Tidal Crush", "power": 32, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Leafeon",
+      "hp": 98,
+      "max_hp": 98,
+      "level": 22,
+      "sprite_path": "menu_sprites/menusprite3.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Leaf Wind", "power": 20, "cost": 3 },
+        { "name": "Vine Whip", "power": 24, "cost": 4 },
+        { "name": "Bloom Strike", "power": 28, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Chikorita",
+      "hp": 86,
+      "max_hp": 86,
+      "level": 21,
+      "sprite_path": "menu_sprites/menusprite15.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Leaf Wind", "power": 18, "cost": 3 },
+        { "name": "Seed Gun", "power": 16, "cost": 2 },
+        { "name": "Bloom Strike", "power": 26, "cost": 5 }
+      ]
+    },
+    {
+      "name": "Lilligant",
+      "hp": 108,
+      "max_hp": 108,
+      "level": 24,
+      "sprite_path": "menu_sprites/menusprite16.png",
+      "element": "grass",
+      "skills": [
+        { "name": "Leaf Wind", "power": 22, "cost": 3 },
+        { "name": "Vine Whip", "power": 26, "cost": 4 },
+        { "name": "Bloom Strike", "power": 30, "cost": 6 }
+      ]
+    },
+    {
+      "name": "Eevee",
+      "hp": 84,
+      "max_hp": 84,
+      "level": 22,
+      "sprite_path": "menu_sprites/menusprite4.png",
+      "element": "neutral",
+      "skills": [
+        { "name": "Quick Hit", "power": 14, "cost": 0 },
+        { "name": "Power Punch", "power": 22, "cost": 2 },
+        { "name": "Focus Jab", "power": 26, "cost": 4 }
+      ]
+    }
+  ]
+}

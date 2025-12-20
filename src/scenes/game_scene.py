@@ -52,7 +52,7 @@ class GameScene(Scene):
             on_click=lambda: scene_manager.open_overlay("backpack")
         )
         self.navigation_button = Button(
-            "UI/button_backpack.png", "UI/button_backpack_hover.png",
+            "UI/button_nav.png", "UI/button_nav_hover.png",
             1050, 20, 50, 50,
             on_click=lambda: scene_manager.open_overlay("navigation", source="game")
         )
@@ -60,6 +60,8 @@ class GameScene(Scene):
         self.nav_path: list[Position] = []
         self.nav_map: str | None = None
         self.nav_target_label: str = ""
+        self.nav_target_pos: Position | None = None
+        self._nav_last_player_tile: tuple[int, int] | None = None
         self.navigation_overlay = NavigationOverlay(self.game_manager, self.set_navigation_target)
         scene_manager.register_scene("navigation", self.navigation_overlay)
         # Chat state
@@ -80,6 +82,8 @@ class GameScene(Scene):
         self.nav_path = []
         self.nav_map = None
         self.nav_target_label = ""
+        self.nav_target_pos = None
+        self._nav_last_player_tile = None
         self.reload_overlays()
     @override
     def enter(self) -> None:
@@ -104,6 +108,10 @@ class GameScene(Scene):
             self.nav_path = []
             self.nav_map = None
             self.nav_target_label = ""
+            self.nav_target_pos = None
+            self._nav_last_player_tile = None
+
+        self._refresh_navigation_path()
 
         # Refresh online players first so collisions can account for them
         if self.online_manager:
@@ -119,7 +127,7 @@ class GameScene(Scene):
                 self.online_players[pid].push_state(data, now)
                 self.online_players[pid].update(dt)
 
-            # prune players that disappeared from server list
+        
             for pid in list(self.online_players.keys()):
                 if pid not in seen_ids:
                     del self.online_players[pid]
@@ -135,13 +143,10 @@ class GameScene(Scene):
                 has_bubbles = bool(self._chat_bubbles)
                 self._chat_poll_timer = 0.25 if active_overlay else (0.5 if has_bubbles else 1.0)
                 self._pull_chat_messages()
-            '''if self._chat_poll_timer <= 0:
-                self._chat_poll_timer = 0.3
-                self._pull_chat_messages()'''
+            
         else:
             self.game_manager.set_online_entities([])
         
-        # Only update player if no overlay is open
         if self.game_manager.player and not scene_manager.overlay_scene:
             self.game_manager.player.update(dt)
 
@@ -150,7 +155,6 @@ class GameScene(Scene):
             self.backpack_button.update(dt)
             self.navigation_button.update(dt)
 
-        # Update enemies and other objects regardless of overlay
         for enemy in self.game_manager.current_enemy_trainers:
             enemy.update(dt)
         
@@ -159,7 +163,6 @@ class GameScene(Scene):
 
         self.game_manager.bag.update(dt)
 
-        # Send own position/state to server (non-blocking enqueue)
         if self.online_manager:
             if self.game_manager.player:
                 _ = self.online_manager.update(
@@ -214,14 +217,6 @@ class GameScene(Scene):
                 self.draw_minimap(screen)
         self.game_manager.bag.draw(screen)
         
-        '''if self.online_manager and self.game_manager.player:
-            list_online = self.online_manager.get_list_players()
-            for player in list_online:
-                if player["map"] == self.game_manager.current_map.path_name:
-                    cam = self.game_manager.player.camera
-                    pos = cam.transform_position_as_position(Position(player["x"], player["y"]))
-                    self.sprite_online.update_pos(pos)
-                    self.sprite_online.draw(screen)'''
         
         if not scene_manager.overlay_scene:
             self.settings_button.draw(screen)
@@ -238,11 +233,9 @@ class GameScene(Scene):
                 px, py = camera.transform_position(pos)
                 pg.draw.circle(screen, (0, 255, 0), (px + GameSettings.TILE_SIZE // 2, py + GameSettings.TILE_SIZE // 2), 6)
 
-        # Draw chat bubbles
         self._draw_chat_bubbles(screen, camera)
 
 
-#Utility for reload after save/load
     def reload_overlays(self):
         
         scene_manager.register_scene("backpack", BackpackOverlay(self.game_manager.bag))
@@ -272,7 +265,7 @@ class GameScene(Scene):
         map_w = full_map_surface.get_width()
         map_h = full_map_surface.get_height()
 
-        # ✅ 1. Keep aspect ratio
+        
         if map_w >= map_h:
             scale = MAX_MINIMAP_SIZE / map_w
             mini_w = MAX_MINIMAP_SIZE
@@ -282,13 +275,11 @@ class GameScene(Scene):
             mini_h = MAX_MINIMAP_SIZE
             mini_w = int(map_w * scale)
 
-        # ✅ 2. Scale the real map
         minimap_surface = pg.transform.scale(
             full_map_surface,
             (mini_w, mini_h)
         )
 
-        # ✅ 3. Border
         pg.draw.rect(
             minimap_surface,
             (255, 255, 255),
@@ -296,14 +287,12 @@ class GameScene(Scene):
             2
         )
 
-        # ✅ 4. Convert player world position → minimap
         scale_x = mini_w / current_map.width_px
         scale_y = mini_h / current_map.height_px
 
         mini_x = int(player.position.x * scale_x)
         mini_y = int(player.position.y * scale_y)
 
-        # ✅ 5. Draw player dot
         pg.draw.circle(
             minimap_surface,
             (0, 255, 255),
@@ -311,10 +300,8 @@ class GameScene(Scene):
             4
         )
 
-        # ✅ 6. Draw minimap on screen
         screen.blit(minimap_surface, (MINIMAP_X, MINIMAP_Y))
 
-    # Chat helpers
     def _pull_chat_messages(self) -> None:
         if not self.online_manager:
             return
@@ -332,7 +319,7 @@ class GameScene(Scene):
             self._chat_last_fetched_id = max(self._chat_last_fetched_id, mid)
             self._chat_overlay_since = max(self._chat_overlay_since, mid)
             self._chat_bubbles[sender] = (text, now + 4.0)
-        # push new messages into overlay store too
+        # push new messages into overlay store
         new_msgs = [m for m in self._chat_history if m[0] > self._chat_overlay_last_id]
         if new_msgs:
             self.chat_overlay.add_messages(new_msgs)
@@ -432,6 +419,8 @@ class GameScene(Scene):
         self.nav_path = path if path else []
         self.nav_map = self.game_manager.current_map.path_name
         self.nav_target_label = teleport.destination
+        self.nav_target_pos = Position(target_pos.x, target_pos.y)
+        self._nav_last_player_tile = self._tile_from_pos(self.game_manager.player.position)
 
     def _find_path(self, map_obj, start_pos: Position, target_pos: Position) -> list[Position] | None:
         tile = GameSettings.TILE_SIZE
@@ -449,7 +438,6 @@ class GameScene(Scene):
             blocked.add((rect.x // tile, rect.y // tile))
 
         def block_rect(rect: pg.Rect):
-            # Block all tiles covered by the rect
             min_x = rect.left // tile
             max_x = (rect.right - 1) // tile
             min_y = rect.top // tile
@@ -497,3 +485,23 @@ class GameScene(Scene):
         path_tiles.reverse()
 
         return [Position(x * tile, y * tile) for x, y in path_tiles]
+
+    def _tile_from_pos(self, pos: Position) -> tuple[int, int]:
+        tile = GameSettings.TILE_SIZE
+        return int(pos.x // tile), int(pos.y // tile)
+
+    def _refresh_navigation_path(self) -> None:
+        if not self.game_manager.player:
+            return
+        if not self.nav_target_pos:
+            return
+        if self.nav_map != self.game_manager.current_map.path_name:
+            return
+
+        current_tile = self._tile_from_pos(self.game_manager.player.position)
+        if current_tile == self._nav_last_player_tile:
+            return
+
+        self._nav_last_player_tile = current_tile
+        new_path = self._find_path(self.game_manager.current_map, self.game_manager.player.position, self.nav_target_pos)
+        self.nav_path = new_path if new_path else []

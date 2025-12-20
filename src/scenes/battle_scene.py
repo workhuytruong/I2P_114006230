@@ -10,7 +10,10 @@ class BattleScene:
     def __init__(self, game_manager, enemy):
         self.game_manager = game_manager
         self.enemy = enemy
-        self.background = BackgroundSprite("backgrounds/background1.png")
+        map_name = getattr(self.game_manager.current_map, "path_name", "")
+        is_desert = str(map_name).lower().endswith("desert.tmx")
+        bg_path = "backgrounds/background2.png" if is_desert else "backgrounds/background1.png"
+        self.background = BackgroundSprite(bg_path)
 
         all_player_mons = self.game_manager.player.monsters
         all_enemy_mons = self.enemy.monsters
@@ -315,7 +318,6 @@ class BattleScene:
         font = pg.font.Font(GameSettings.FONT, 22)
         name_font = pg.font.Font(GameSettings.FONT, 24)
 
-        # Banner background
         screen.blit(self.banner_sprite.image, (x, y))
         pad_x = 17
         pad_y = 12
@@ -356,7 +358,7 @@ class BattleScene:
             x = GameSettings.SCREEN_WIDTH // 4 * 3 - 60
             y = GameSettings.SCREEN_HEIGHT // 2 - 125
             screen.blit(enemy_sprite.image, (x, y))
-            # Enemy info anchored to top-right corner
+            
             info_x = GameSettings.SCREEN_WIDTH - 290
             info_y = 24
             self.draw_hp_bar(screen, info_x, info_y + 125, enemy)
@@ -368,7 +370,7 @@ class BattleScene:
             x = GameSettings.SCREEN_WIDTH // 4 - 60
             y = GameSettings.SCREEN_HEIGHT // 2
             screen.blit(player_sprite.image, (x, y))
-            # Player info anchored to top-left corner
+            
             info_x = 40
             info_y = 24
             self.draw_hp_bar(screen, info_x, info_y + 125, player)
@@ -402,11 +404,9 @@ class BattleScene:
         pass
 
     def calculate_total_exp_reward(self) -> int:
-        """Total EXP reward based on total enemy HP defeated."""
         return sum(m.max_hp for m in self.enemy_team)
 
     def distribute_exp(self, total_exp: int) -> list[str]:
-        """Give EXP proportionally to damage dealt; non-participants get 0."""
         if total_exp <= 0:
             return []
 

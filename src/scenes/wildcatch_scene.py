@@ -25,7 +25,7 @@ class WildCatchScene(Scene):
         self.run_button: Button | None = None
 
     def enter(self) -> None:
-        # Choose background and encounters based on current map
+    
         current_map = getattr(self.game_manager, "current_map_key", "")
         bg_path = "backgrounds/background2.png" if "desert" in current_map else "backgrounds/background1.png"
         self.background = BackgroundSprite(bg_path)
@@ -99,7 +99,7 @@ class WildCatchScene(Scene):
         screen.blit(text, (40, 40))
 
     def draw_monster_info(self, screen: pg.Surface, x: int, y: int) -> None:
-        """Render HP/Level/EXP info for the wild monster."""
+
         m = self.wild_monster
         if not m:
             return
@@ -108,7 +108,7 @@ class WildCatchScene(Scene):
         info = font.render(f"{m.name}  Lv {m.level}", True, (255, 255, 255))
         screen.blit(info, (x - 40, y))
 
-        # HP bar
+
         bar_w, bar_h = 220, 16
         ratio = max(0, min(1, m.hp / m.max_hp))
         pg.draw.rect(screen, (80, 80, 80), (x - 40, y + 30, bar_w, bar_h))
@@ -116,7 +116,6 @@ class WildCatchScene(Scene):
         hp_text = font.render(f"HP: {m.hp}/{m.max_hp}", True, (255, 255, 255))
         screen.blit(hp_text, (x - 40, y + 55))
 
-        # EXP info (even for wild, show current pool)
         exp_text = font.render(f"EXP: {m.exp}/{m.exp_to_next}", True, (200, 200, 0))
         screen.blit(exp_text, (x - 40, y + 80))
 
@@ -133,12 +132,10 @@ class WildCatchScene(Scene):
 
         bag = self.game_manager.bag
 
-        # ✅ Check if player has Pokeballs
         if bag.get_item_count("Pokeball") <= 0:
             print("No Pokeballs left!")
             return
 
-        # ✅ Use 1 Pokeball
         used = bag.use_item("Pokeball")
         if not used:
             print("Failed to use Pokeball")

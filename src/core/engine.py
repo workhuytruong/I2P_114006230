@@ -67,17 +67,13 @@ class Engine:
             input_manager.handle_events(event)
 
             if scene_manager.overlay_scene:
-                # Only overlay handles events
                 scene_manager.overlay_scene.handle_event(event)
             elif scene_manager.current_scene:
-                # Only current scene handles events if no overlay
                 scene_manager.current_scene.handle_event(event)
     def update(self, dt: float):
         if scene_manager.overlay_scene:
-            # Only update overlay
             scene_manager.overlay_scene.update(dt)
         else:
-            # No overlay, update current scene
             scene_manager.update(dt)
         
 

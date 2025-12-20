@@ -16,12 +16,10 @@ class Bag:
 
     @property
     def monsters(self) -> list[Monster]:
-        """Public access to monsters."""
         return list(self._monsters_data)
 
     @property
     def items(self) -> list[Item]:
-        """Public access to items."""
         return list(self._items_data)
     
     def update(self, dt: float):

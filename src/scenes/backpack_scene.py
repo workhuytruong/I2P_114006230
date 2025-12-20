@@ -83,7 +83,6 @@ class BackpackOverlay(Scene):
             text = f"{m.name}  Lv:{m.level}"
             screen.blit(self.font.render(text, True, (255, 255, 255)), (start_x + 120, y))
 
-            
             hp = m.hp
             max_hp = m.max_hp
             ratio = hp / max_hp
@@ -91,10 +90,7 @@ class BackpackOverlay(Scene):
             bar_w = 170
             bar_h = 12
 
-            
             pg.draw.rect(screen, (60, 60, 60), (start_x + 120, y + 30, bar_w, bar_h))
-
-            
             pg.draw.rect(screen, (0, 220, 0), (start_x + 120, y + 30, bar_w * ratio, bar_h))
 
             exp_text = f"EXP: {m.exp}/{m.exp_to_next}"

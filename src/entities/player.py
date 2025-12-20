@@ -45,14 +45,8 @@ class Player(Entity):
         dis.x *= factor
         dis.y *= factor
         
-        # ---------------------------
-        # ✅ MOVING STATE
-        # ---------------------------
         self.is_moving = (dis.x != 0 or dis.y != 0)
 
-        # ---------------------------
-        # ✅ DIRECTION STATE
-        # ---------------------------
         if self.is_moving:
             if abs(dis.x) > abs(dis.y):
                 if dis.x > 0:

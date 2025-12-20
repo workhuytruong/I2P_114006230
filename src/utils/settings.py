@@ -7,7 +7,7 @@ class Settings:
     SCREEN_HEIGHT: int = 720    # Height of the game window
     FPS: int = 60               # Frames per second
     TITLE: str = "I2P Final"    # Title of the game window
-    DEBUG: bool = True          # Debug mode
+    DEBUG: bool = False          # Debug mode
     TILE_SIZE: int = 64         # Size of each tile in pixels
     DRAW_HITBOXES: bool = False  # Draw hitboxes for debugging
     # Audio
@@ -16,7 +16,7 @@ class Settings:
     # Font
     FONT = "assets/fonts/Minecraft.ttf"
     # Online
-    IS_ONLINE: bool = False
+    IS_ONLINE: bool = True
 
     
     ONLINE_SERVER_URL: str = "http://localhost:8989"

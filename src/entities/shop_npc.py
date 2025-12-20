@@ -27,7 +27,6 @@ class ShopNPC(NPC):
     @classmethod
     @override
     def from_dict(cls, data, game_manager):
-        # Convert facing from saved string to Direction enum
         facing_val = data.get("facing", "DOWN")
         sprite_sheet = data.get("sprite_sheet")
         if isinstance(facing_val, str):

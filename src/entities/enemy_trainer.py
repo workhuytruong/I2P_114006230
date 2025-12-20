@@ -166,12 +166,3 @@ class EnemyTrainer(Entity):
         base["monsters"] = [m.to_dict() for m in self.monsters]
         base["sprite_sheet"] = self.sprite_sheet
         return base
-    
-    '''def get_hitbox(self) -> pygame.Rect:
-    # Create and return a hitbox based on the enemy's position and size
-        return pygame.Rect(
-           int(self.position.x),
-           int(self.position.y),
-           GameSettings.TILE_SIZE,  # Assuming the width is the size of a tile
-           GameSettings.TILE_SIZE   # Assuming the height is the size of a tile
-        )'''

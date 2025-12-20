@@ -153,7 +153,6 @@ import os
 
 
 def _load_wild_pools() -> dict[str, list[dict]]:
-    """Load wild encounter pools from saves/wildpokemon.json."""
     json_path = os.path.join("saves", "wildpokemon.json")
     with open(json_path, "r") as f:
         data = json.load(f)
@@ -198,7 +197,6 @@ def create_monster_from_template(tpl: dict) -> "Monster":
 
 
 def random_wild_monster(map_name: str | None = None) -> "Monster":
-    """Return a random monster based on the current map name."""
     if not map_name:
         raise ValueError("Map name required to select wild monsters")
 

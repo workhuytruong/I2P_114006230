@@ -2,7 +2,6 @@ from src.entities.monsters import Monster
 
 
 class RemoteTrainer:
-    """Lightweight trainer representation for online battles."""
 
     def __init__(self, monsters_data: list[dict], name: str = "Online Trainer"):
         self.name = name

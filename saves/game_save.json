@@ -1350,8 +1350,8 @@
   ],
   "current_map": "map.tmx",
   "player": {
-    "x": 16.0,
-    "y": 31.5
+    "x": 19.875,
+    "y": 30.0
   },
   "bag": {
     "monsters": [
@@ -1385,7 +1385,7 @@
       },
       {
         "name": "Grovyle",
-        "hp": 182,
+        "hp": 200,
         "max_hp": 200,
         "level": 36,
         "exp": 0,

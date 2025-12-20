@@ -13,7 +13,6 @@ class NotificationOverlay(Scene):
         self.font_small = pg.font.Font(GameSettings.FONT, 28)
 
     def enter(self):
-        # Reset timer whenever opened
         self.timer = self.duration
 
     def exit(self):
@@ -25,12 +24,11 @@ class NotificationOverlay(Scene):
             scene_manager.close_overlay()
 
     def handle_event(self, event: pg.event.Event) -> None:
-        # Close on any click or key press to let player continue quickly
         if event.type in (pg.MOUSEBUTTONDOWN, pg.KEYDOWN):
             scene_manager.close_overlay()
 
     def draw(self, screen: pg.Surface):
-        # Dim background
+
         overlay = pg.Surface((GameSettings.SCREEN_WIDTH, GameSettings.SCREEN_HEIGHT), pg.SRCALPHA)
         overlay.fill((0, 0, 0, 180))
         screen.blit(overlay, (0, 0))

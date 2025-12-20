@@ -9,7 +9,6 @@ class Element(str, Enum):
 
 
 def _parse_element(raw: object) -> Element:
-    """Convert raw input to an Element value; default to NEUTRAL."""
     if isinstance(raw, Element):
         return raw
     if isinstance(raw, str):
@@ -21,7 +20,6 @@ def _parse_element(raw: object) -> Element:
 
 
 def type_multiplier(attacker_element: object, defender_element: object) -> float:
-    """Return multiplier for attacker vs defender."""
     atk = _parse_element(attacker_element)
     df = _parse_element(defender_element)
     if atk == Element.NEUTRAL or df == Element.NEUTRAL or atk == df:
@@ -32,7 +30,7 @@ def type_multiplier(attacker_element: object, defender_element: object) -> float
         return 1.5
     if atk == Element.GRASS and df == Element.WATER:
         return 1.5
-    # Inverse match is weak
+    
     if df == Element.WATER and atk == Element.FIRE:
         return 0.75
     if df == Element.FIRE and atk == Element.GRASS:
@@ -73,11 +71,9 @@ class Monster:
 
     @property
     def exp_to_next(self) -> int:
-        """Required EXP for next level; scales with current level."""
         return 30 + self.level * 10
 
     def gain_exp(self, amount: int):
-        """Add EXP and handle level-ups, carrying over excess EXP."""
         if amount <= 0:
             return
         self.exp += amount
@@ -103,17 +99,7 @@ class Monster:
             "skills": [s.__dict__ for s in self.skills]
         }
     def update(self, dt: float):
-        #flash should not be here
-        '''if self.flash_timer > 0:
-            self.flash_timer -= dt
-
-            # blink on/off every flash_interval
-            if int(self.flash_timer / self.flash_interval) % 2 == 0:
-                self.flash_state = True
-            else:
-                self.flash_state = False
-        else:
-            self.flash_state = False'''
+        pass
 
     @classmethod
     def from_dict(cls, data: dict) -> "Monster":

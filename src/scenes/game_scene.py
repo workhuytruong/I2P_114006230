@@ -100,10 +100,8 @@ class GameScene(Scene):
     def update(self, dt: float):
         if self.pause_updates:
             return
-        # Check if there is assigned next scene
         self.game_manager.try_switch_map()
 
-        # Clear navigation if map changed
         if self.nav_map and self.nav_map != self.game_manager.current_map.path_name:
             self.nav_path = []
             self.nav_map = None
@@ -113,7 +111,6 @@ class GameScene(Scene):
 
         self._refresh_navigation_path()
 
-        # Refresh online players first so collisions can account for them
         if self.online_manager:
             seen_ids = set()
             now = time.monotonic()

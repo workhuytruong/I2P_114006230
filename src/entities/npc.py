@@ -69,7 +69,7 @@ class NPC(Entity):
 
         self.detected = False
 
-    # ✅ SAME AS ENEMY TRAINER
+    
     def _set_direction(self, direction: Direction) -> None:
         self.direction = direction
         if direction == Direction.RIGHT:
@@ -82,7 +82,7 @@ class NPC(Entity):
             self.animation.switch("UP")
         self.los_direction = self.direction
 
-    # ✅ SAME AS ENEMY TRAINER
+
     def _get_los_rect(self) -> pygame.Rect | None:
         if self.max_tiles is None:
             return None
@@ -112,7 +112,6 @@ class NPC(Entity):
             )
         return None
 
-    # ✅ SAME AS ENEMY TRAINER — but calls interact() instead of start_battle
     def _has_los_to_player(self) -> None:
         player = self.game_manager.player
         if player is None:
@@ -135,7 +134,7 @@ class NPC(Entity):
         self.detected = False
 
     def interact(self):
-        pass  # overridden by subclasses (ShopNPC, HealerNPC…)
+        pass  
 
     @override
     def update(self, dt: float) -> None:
@@ -159,7 +158,7 @@ class NPC(Entity):
                     camera.transform_rect(los_rect), 1
                 )
 
-    # ✅ SAVE / LOAD SUPPORT
+
     @classmethod
     @override
     def from_dict(cls, data: dict, game_manager: GameManager) -> "NPC":

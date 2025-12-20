@@ -65,7 +65,6 @@ class BackpackOverlay(Scene):
 
         
         #Monster Section
-        
         screen.blit(self.font.render("Monsters", True, (255, 255, 0)), (start_x, y))
         y += 40
 

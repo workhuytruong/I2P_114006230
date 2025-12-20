@@ -23,10 +23,8 @@ class Map:
         pixel_w = self.tmxdata.width * GameSettings.TILE_SIZE
         pixel_h = self.tmxdata.height * GameSettings.TILE_SIZE
 
-        # Prebake the map
         self._surface = pg.Surface((pixel_w, pixel_h), pg.SRCALPHA)
         self._render_all_layers(self._surface)
-        # Prebake the collision map
         self._collision_map = self._create_collision_map()
 
     def update(self, dt: float):
@@ -35,7 +33,6 @@ class Map:
     def draw(self, screen: pg.Surface, camera: PositionCamera):
         screen.blit(self._surface, camera.transform_position(Position(0, 0)))
         
-        # Draw the hitboxes collision map
         if GameSettings.DRAW_HITBOXES:
             for rect in self._collision_map:
                 pg.draw.rect(screen, (255, 0, 0), camera.transform_rect(rect), 1)
@@ -50,7 +47,6 @@ class Map:
     def check_teleport(self, player_rect: pg.Rect) -> Teleport | None:
        
         for teleporter in self.teleporters:
-        # Create a rectangle for the teleporter's position
             tele_rect = pg.Rect(
                 teleporter.pos.x,
                 teleporter.pos.y,
@@ -58,10 +54,9 @@ class Map:
                 GameSettings.TILE_SIZE
             )
             
-            # Check if the player's position collides with the teleporter's rectangle
             if tele_rect.colliderect(player_rect):
-                return teleporter  # Return the teleport object if a collision is detected
-        return None  # No teleportation available
+                return teleporter
+        return None
 
     def _render_all_layers(self, target: pg.Surface) -> None:
         for layer in self.tmxdata.visible_layers:

@@ -15,10 +15,14 @@ class BattleScene:
         bg_path = "backgrounds/background2.png" if is_desert else "backgrounds/background1.png"
         self.background = BackgroundSprite(bg_path)
 
-        all_player_mons = self.game_manager.player.monsters
+        all_player_mons = sorted(
+            [m for m in self.game_manager.player.monsters if m.hp > 0],
+            key=lambda mon: getattr(mon, "hp", 0),
+            reverse=True,
+        )
         all_enemy_mons = self.enemy.monsters
 
-        self.player_team = [m for m in all_player_mons if m.hp > 0][:3]
+        self.player_team = all_player_mons[:3]
         self.enemy_team = [m for m in all_enemy_mons if m.hp > 0][:3]
         self.player_buffs = {m: {"atk": 0, "def": 0} for m in self.player_team}
 
@@ -195,31 +199,24 @@ class BattleScene:
             self.create_action_buttons()
 
     def use_strength_potion(self):
-        """Increase current monster's attack for this battle and consume item."""
         if self.state != "PLAYER_TURN" or self.turn_delay > 0:
             return
         if self.game_manager.bag.use_item("Strength Potion"):
             mon = self.current_player()
             self.player_buffs.setdefault(mon, {"atk": 0, "def": 0})
             self.player_buffs[mon]["atk"] += 5
-            #self.state = "ENEMY_WAIT"
-            #self.turn_delay = 1.5
             self.create_action_buttons()
 
     def use_defense_potion(self):
-        """Increase current monster's defense for this battle and consume item."""
         if self.state != "PLAYER_TURN" or self.turn_delay > 0:
             return
         if self.game_manager.bag.use_item("Defense Potion"):
             mon = self.current_player()
             self.player_buffs.setdefault(mon, {"atk": 0, "def": 0})
             self.player_buffs[mon]["def"] += 5
-            #self.state = "ENEMY_WAIT"
-            #self.turn_delay = 1.5
             self.create_action_buttons()
 
     def switch_monster(self):
-        """Switch to the next available (non-KO) monster and pass the turn."""
         if self.state != "PLAYER_TURN" or self.turn_delay > 0:
             return
 

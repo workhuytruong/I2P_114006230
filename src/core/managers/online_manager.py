@@ -74,9 +74,6 @@ class OnlineManager:
             Logger.warning(f"Online chat poll error: {e}")
         return []
     
-    # ------------------------------------------------------------------
-    # Threading and API Calling Below
-    # ------------------------------------------------------------------
     def register(self):
         try:
             url = f"{self.base}/register"
@@ -157,7 +154,6 @@ class OnlineManager:
                 body = self._send_queue.get(timeout=UPDATE_INTERVAL)
             except queue.Empty:
                 continue
-
             # keep only the newest state if multiple queued
             while True:
                 try:
